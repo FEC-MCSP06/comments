@@ -24,8 +24,8 @@ app.use(cors());
 app.post('/api/comments', async(req, res)=>{
     try{
         let newEntry = req.body;
-        console.log(newEntry)
-        let result = await pool.query(`INSERT INTO journal(person_id, topic, post) VALUES(${newEntry.person_id}, '${newEntry.topic}', '${newEntry.post}')`);
+        // console.log(newEntry)
+        let result = await pool.query(`INSERT INTO comment(profile_id, post, pinned, thumbsup, thumbsdown, videoKey) VALUES(${newEntry.id}, '${newEntry.post}', ${false}, ${0}, ${0}, ${newEntry.videoKey})`);
         res.status(200).send("congrats you just created a new post")
     }catch(err){ 
         console.error(err);

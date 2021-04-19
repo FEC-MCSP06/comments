@@ -9,7 +9,8 @@ class CommentSection extends Component {
           userID: this.props.userID,
           videoKey : this.props.videoKey,
           comments: [],
-          pinned: []
+          pinned: [],
+          post: null
       };
     }
 async componentDidMount(){
@@ -25,12 +26,17 @@ async componentDidMount(){
              )
 }
 
+PostNewComment(){
+
+}
+
     render(){
       return(
         <div>
 
             <PostComment
             userID = {this.state.userID}
+            videoKey = {this.state.videoKey}
             />
             <Comments 
             comments = {this.state.comments}
