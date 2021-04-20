@@ -2,6 +2,7 @@ const express = require ('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const{Pool}= require('pg')
+const path = require('path')
 const pool = new Pool({
     user:'jeffrydelapena',
     password:'',
@@ -19,7 +20,8 @@ app.use(cors());
 //maybe thing for auto redirect to homepage?
 
 //routes
-
+// //static public 
+// app.use(express)
 //create
 app.post('/api/comments', async(req, res)=>{
     try{

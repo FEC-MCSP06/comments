@@ -6,13 +6,19 @@ class PostComment extends Component{
     constructor(props){
         super(props);
         this.state = {
-            post:'testing this out',
+            post:null,
         }
     }
+
+    handleChange(e){
+        e.preventDefault();
+        this.setState({
+            post: e.target.value
+        })
+    }
+
     async PostSend(){
-        console.log({
-            id: this.props.userID, post: this.state.post, videoKey: this.props.videoKey
-         })
+        
         fetch(`http://localhost:3208/api/comments/`,{
           method: 'POST',
           headers: {
@@ -22,21 +28,13 @@ class PostComment extends Component{
              id: this.props.userID, post: this.state.post, videoKey: this.props.videoKey
           })
         })
-        .then(result=>
-          result.text()
-    )
-           .then(result =>{
-               console.log(result)
-            //    this.setState({
-                  
-            //  })
-           })   
     }
+
     render(){
         return(
             <form>
                 <div>
-                   <textarea></textarea> 
+                   <textarea onChange ={(e)=>{this.handleChange(e)}}></textarea> 
                 </div>
                 <button onClick= {()=>{this.PostSend()}}>comment</button>
                 <button>cancel</button>
