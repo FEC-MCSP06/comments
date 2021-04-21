@@ -3,7 +3,10 @@ const Comments = ({comments})=>{
     
 return(
 <>
-<h1>total comments:{comments.length}</h1>
+<div className = 'text'>
+   <h1>total comments:{comments.length}</h1> 
+</div>
+
 {comments.map((elem)=>{
         return(<CommentItem elem ={elem}/>)
         

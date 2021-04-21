@@ -51,8 +51,21 @@ app.get('/api/comments/:id', async(req, res)=>{
 app.get('/api/comments/', async(req, res)=>{
     try {
         
-        let result = await pool.query(`SELECT * FROM comment`)
+        let result = await pool.query(`SELECT * FROM comment ORDER BY comment_id DESC`)
         res.status(200).send(result.rows)
+    }catch(err){ 
+        console.error(err);
+        res.status(500).send(`Error Encountered: ${err}`)
+    }
+})
+
+//likes
+app.put('/api/likes/', async(req, res)=>{
+    try{
+        let com = req.body;
+        console.log(com.id);
+        let likes = await pool.query(`UPDATE comment SET thumbsup = thumbsup +3-2 WHERE comment_id = ${com.id}`);
+        res.status(200).send("congrats ttt")
     }catch(err){ 
         console.error(err);
         res.status(500).send(`Error Encountered: ${err}`)
@@ -60,7 +73,7 @@ app.get('/api/comments/', async(req, res)=>{
 })
 //error if no route hits
 app.use((req, res)=>{
-    res.status(404).send('Page not found or you went somewhere weird? but it tried at least')
+    res.status(404).send('Page not found or you went somewhere weird? but it tried at least');
 })
 //listen 
 app.listen(PORT, ()=>{console.log('listening on port:' + PORT)})

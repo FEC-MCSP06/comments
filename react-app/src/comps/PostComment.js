@@ -33,11 +33,17 @@ class PostComment extends Component{
     render(){
         return(
             <form>
-                <div>
-                   <textarea onChange ={(e)=>{this.handleChange(e)}}></textarea> 
+                <div className = 'textArea'>
+                    <input type='text' onChange ={(e)=>{this.handleChange(e)}}>
+                    </input>
+                   
                 </div>
-                <button onClick= {()=>{this.PostSend()}}>comment</button>
-                <button>cancel</button>
+
+                <div className = "btns">
+                  <button onClick= {()=>{this.PostSend()}}>comment</button>
+                <button>cancel</button>  
+                </div>
+                
             </form>
         )
 
