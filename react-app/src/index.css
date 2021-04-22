@@ -54,15 +54,34 @@ code {
 input{
   width : 35.5%;
   height: 22%;
- border-bottom:thick rgba(136, 136, 136, 0.913); 
- border-width:5px;
+  color: #ffffff;
+ border: none;
+ background-color: #181818;
+ border-bottom: 1px solid #ffffff;
+ padding-bottom: 7px;
+}
+input:focus{
+  outline: none;
+  border-bottom: 1px solid #000000;
+  transition: border-bottom 1s ease;
 }
 
 .btns{
   display: flex;
   flex-direction: row;
+  border-radius: 2px;
   margin-left: 27%;
 }
+.post{
+  border:5px solid #ffffff;
+}
+.cancel{
+  border:5px solid #ffffff;
+  color: #ffffff;
+  background-color: #181818;
+  border: none
+}
+
 .container{
   display: flex;
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 
 class PostComment extends Component{
-    // console.log()
+   
     constructor(props){
         super(props);
         this.state = {
@@ -34,14 +34,14 @@ class PostComment extends Component{
         return(
             <form>
                 <div className = 'textArea'>
-                    <input type='text' onChange ={(e)=>{this.handleChange(e)}}>
+                    <input type='text' onChange ={(e)=>{this.handleChange(e)}} placeholder='Add a public comment...'>
                     </input>
                    
                 </div>
 
                 <div className = "btns">
-                  <button onClick= {()=>{this.PostSend()}}>comment</button>
-                <button>cancel</button>  
+                  <button className= "post" onClick= {()=>{this.PostSend()}}>comment</button>
+                <button className = 'cancel'>cancel</button>  
                 
                 </div>
                 

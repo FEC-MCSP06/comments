@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class CommentItem extends Component{
-    // console.log()
+
     constructor(props){
         super(props);
         this.state = {
@@ -28,8 +28,7 @@ class CommentItem extends Component{
                     })
         }else{console.log(e.target.className)}
         
-        //     thumbsDown:this.props.elem.thumbsdown
-        // })
+  
         
     }
 
