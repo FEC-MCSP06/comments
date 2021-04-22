@@ -6,7 +6,8 @@ return(
 
 
 {comments.map((elem)=>{
-        return(<CommentItem elem ={elem}/>)
+        return(<CommentItem elem ={elem}
+            key = {elem.comment_id}/>)
         
     })}
 </>

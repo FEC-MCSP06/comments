@@ -36,7 +36,7 @@ async componentDidMount(){
              <h4>{this.state.comments.length} Comments</h4> 
             </div>
             <div className= 'sortBy'>
-              <h4><i class="fa">&#xf0c9;</i>SORT BY</h4>
+              <h4><i className="fa">&#xf0c9;</i>SORT BY</h4>
             </div>
           </div>
             

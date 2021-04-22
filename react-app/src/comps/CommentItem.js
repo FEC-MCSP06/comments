@@ -35,7 +35,7 @@ class CommentItem extends Component{
 
     render(){
         return(
-            <div key = {this.props.elem.comment_id}>
+            <div >
                 <div className = 'text'>
                  <h3> name:{this.props.elem.profile_id}<br></br>{this.props.elem.post} </h3>   
                 </div>
@@ -50,14 +50,14 @@ class CommentItem extends Component{
                      </div>
                      <div className = 'Downvotes'>
                          <div>
-                             <i class='fas fa-thumbs-down'></i> 
+                             <i className='fas fa-thumbs-down'></i> 
                          </div>
                      </div>
                      <div className = 'UpVoteCounts'>
                              <h4>{this.props.elem.thumbsdown}</h4>
                      </div>
                      <div className ='anything'>
-                        <button className = "reply"> <text className ='text'>REPLY</text></button>
+                        <button className = "reply"> <p className ='text'>REPLY</p></button>
                      </div>
                 </div>
             </div>
