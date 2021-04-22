@@ -26,7 +26,7 @@ class App extends Component {
         <CommentSection
         userID={this.state.userID}
         videoKey = {this.state.videoKey}
-        keyGrabber = {this.state.keyGrabber}
+        keyGrabber = {this.keyGrabber}
         />
 
       </div>
