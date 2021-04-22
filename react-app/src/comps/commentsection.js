@@ -26,18 +26,25 @@ async componentDidMount(){
              )
 }
 
-PostNewComment(){
 
-}
 
     render(){
       return(
         <div>
-
+          <div className = 'container'>
+            <div className = 'text'>
+             <h4>{this.state.comments.length} Comments</h4> 
+            </div>
+            <div className= 'sortBy'>
+              <h4><i class="fa">&#xf0c9;</i>SORT BY</h4>
+            </div>
+          </div>
+            
             <PostComment
             userID = {this.state.userID}
             videoKey = {this.state.videoKey}
             />
+            
             <Comments 
             comments = {this.state.comments}
             />

@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-  margin: 0;
+  margin: 2rem;
+  padding: 2rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -53,16 +54,28 @@ code {
 input{
   width : 35.5%;
   height: 22%;
+ border-bottom:thick rgba(136, 136, 136, 0.913); 
+ border-width:5px;
+}
 
-}
-.textArea{
-  mask-border-width: 35%;
-  border-bottom:solid;
-  border-bottom-color: whitesmoke;
-  border-width:large;
-}
 .btns{
   display: flex;
   flex-direction: row;
   margin-left: 27%;
+}
+.container{
+  display: flex;
+}
+.sortBy{
+  display: flex;
+  flex-direction: row;
+  color: #909090;
+  font-family: 'Roboto', sans-serif;
+  padding-left: 1rem;
+  
+}
+
+.reply{
+  background-color: #181818;
+  border: none
 }

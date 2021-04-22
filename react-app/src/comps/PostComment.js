@@ -42,6 +42,7 @@ class PostComment extends Component{
                 <div className = "btns">
                   <button onClick= {()=>{this.PostSend()}}>comment</button>
                 <button>cancel</button>  
+                
                 </div>
                 
             </form>

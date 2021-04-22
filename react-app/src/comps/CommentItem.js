@@ -56,6 +56,9 @@ class CommentItem extends Component{
                      <div className = 'UpVoteCounts'>
                              <h4>{this.props.elem.thumbsdown}</h4>
                      </div>
+                     <div className ='anything'>
+                        <button className = "reply"> <text className ='text'>REPLY</text></button>
+                     </div>
                 </div>
             </div>
          )
