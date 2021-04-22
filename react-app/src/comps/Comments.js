@@ -2,8 +2,8 @@ import CommentItem from './CommentItem'
 import react from 'react'
 const Comments = ({comments, keyGrabber})=>{
     react.useEffect('changeVideoKey',(e)=>{
-        videoKey= e.detail.videoKey;
-        keyGrabber(videoKey)
+        let vidKey = e.detail.videoKey;
+        keyGrabber(vidKey)
     })
 return(
 <div>
