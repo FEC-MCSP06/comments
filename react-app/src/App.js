@@ -9,9 +9,16 @@ class App extends Component {
     super(props);
     this.state = {
       videoKey: 1,
-      userID: 5
+      userID: 1
       
     };
+    this.keyGrabber = this.keyGrabber.bind(this)
+  }
+
+  keyGrabber(videoKey){
+    this.setState({
+      videoKey: videoKey
+    })
   }
   render(){
     return(
@@ -19,6 +26,7 @@ class App extends Component {
         <CommentSection
         userID={this.state.userID}
         videoKey = {this.state.videoKey}
+        keyGrabber = {this.state.keyGrabber}
         />
 
       </div>

@@ -47,6 +47,7 @@ async componentDidMount(){
             
             <Comments 
             comments = {this.state.comments}
+            keyGrabber = {this.props.keyGrabber}
             />
           
           
