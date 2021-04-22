@@ -2,7 +2,7 @@ import CommentItem from './CommentItem'
 const Comments = ({comments})=>{
     
 return(
-<>
+<div>
 
 
 {comments.map((elem)=>{
@@ -10,7 +10,7 @@ return(
             key = {elem.comment_id}/>)
         
     })}
-</>
+</div>
     
 )
             

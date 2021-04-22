@@ -21,11 +21,6 @@ class App extends Component {
         videoKey = {this.state.videoKey}
         />
 
-        
-       
-        
-        
-        
       </div>
     )
   }
