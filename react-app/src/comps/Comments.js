@@ -1,11 +1,21 @@
 import CommentItem from './CommentItem'
-const Comments = ({comments})=>{
+import react from 'react'
+const Comments = ({comments, keyGrabber})=>{
+    
+      
+    
     
 return(
-    comments.map((elem)=>{
-        return(<CommentItem elem ={elem}/>)
+<div>
+
+
+{comments.map((elem)=>{
+        return(<CommentItem elem ={elem}
+            key = {elem.comment_id}/>)
         
-    })
+    })}
+</div>
+    
 )
             
         
@@ -18,3 +28,5 @@ return(
     
 }
 export default Comments
+
+

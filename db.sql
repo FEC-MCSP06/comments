@@ -54,3 +54,5 @@ INSERT INTO comment(profile_id, post, pinned, thumbsup, thumbsdown, videoKey) VA
 INSERT INTO comment(profile_id, post, pinned, thumbsup, thumbsdown, videoKey) VALUES(3, 'never gonna give you up', true, 3, 2, 1);
 INSERT INTO comment(profile_id, post, pinned, thumbsup, thumbsdown, videoKey) VALUES(3, 'im snacking', false, 47, 2, 2);
 INSERT INTO comment(profile_id, post, pinned, thumbsup, thumbsdown, videoKey) VALUES(3, 'where there is light theres always darkness', true, 69, 0, 3);
+
+UPDATE comment SET thumbsup = thumbsup +1 WHERE comment_id = 25;

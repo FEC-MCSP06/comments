@@ -7,12 +7,20 @@ class CommentSection extends Component {
       super(props);
       this.state = {
           userID: this.props.userID,
-          videoKey : this.props.videoKey,
+          videoKey : 1,
           comments: [],
-          pinned: []
+          pinned: [],
+          post: null,
+          flipper: false
       };
+      this.keyGrabber = this.keyGrabber.bind(this)
     }
 async componentDidMount(){
+  window.addEventListener('changeVideoKey',(e)=>{
+    let vidKey = e.detail.videoKey;
+    this.keyGrabber(vidKey)
+})
+  console.log('mounted')
     fetch(`http://localhost:3208/api/comments/${this.state.videoKey}`)
         .then(result=>
               result.json()
@@ -24,16 +32,54 @@ async componentDidMount(){
                }
              )
 }
+tester(){
+  fetch(`http://localhost:3208/api/comments/${this.state.videoKey}`)
+  .then(result=>
+        result.json()
+  )
+         .then(result =>{
+             this.setState({
+                comments : result,
+                flipper : true
+           })
+         }
+       )
+}
+
+keyGrabber(videKey){
+    
+  this.setState({
+    videoKey:videKey,
+    flipper: false
+   })
+
+ 
+}
 
     render(){
+      
+      if (this.state.flipper === false){
+        this.tester()
+      }
       return(
         <div>
-
+          <div className = 'container'>
+            <div className = 'text'>
+             <h4>{this.state.comments.length} Comments</h4> 
+            </div>
+            <div className= 'sortBy'>
+              <h4 id= 'test'><i className="fa">&#xf0c9;</i>  SORT BY</h4>
+            </div>
+          </div>
+            
             <PostComment
             userID = {this.state.userID}
+            videoKey = {this.state.videoKey}
             />
+            
             <Comments 
             comments = {this.state.comments}
+            
             />
           
           
