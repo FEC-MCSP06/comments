@@ -24,7 +24,7 @@ code {
 .votes{
   display:flex;
   width: 100%;
-  flex-wrap: wrap;
+  
   flex-direction: row;
 
 }
@@ -47,8 +47,8 @@ code {
 
 .UpVoteCounts{
   display: flex;
-  margin-top: -1.73%;
-  padding: 0.5%;
+  margin-top: -5.73%;
+  padding: 1.5%;
   color: #909090 ;
 }
 input{
@@ -73,11 +73,13 @@ input:focus{
   margin-left: 27%;
 }
 .post{
-  border:5px solid #ffffff;
+  background-color: #606060;
+  color: #181818;
+  border:none
 }
 .cancel{
   border:5px solid #ffffff;
-  color: #ffffff;
+  color: #606060;
   background-color: #181818;
   border: none
 }
@@ -96,5 +98,18 @@ input:focus{
 
 .reply{
   background-color: #181818;
-  border: none
+  border: none;
+  margin-bottom: -3px;
+}
+
+.ybd{
+  display: flex;
+}
+.toName{
+  border-radius: 50%;
+  
+}
+.toNamelater{
+  padding-right: 10px;
+  padding-top: 17px;
 }

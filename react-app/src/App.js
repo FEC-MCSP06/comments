@@ -9,24 +9,35 @@ class App extends Component {
     super(props);
     this.state = {
       videoKey: 1,
-      userID: 1
+      userID: 2
       
     };
-    this.keyGrabber = this.keyGrabber.bind(this)
+
+    
+    // this.keyGrabber = this.keyGrabber.bind(this)
   }
 
-  keyGrabber(videoKey){
-    this.setState({
-      videoKey: videoKey
-    })
-  }
+  // keyGrabber(videKey){
+    
+  //   this.setState({videoKey:videKey })
+
+   
+  // }
   render(){
+    let changeVideoKey = new CustomEvent("changeVideoKey", {
+      detail:{
+        videoKey:3
+      }
+    })
     return(
       <div>
+        <button onClick = {()=>{
+         
+          dispatchEvent(changeVideoKey)}}>try me</button>
         <CommentSection
         userID={this.state.userID}
         videoKey = {this.state.videoKey}
-        keyGrabber = {this.keyGrabber}
+        // keyGrabber = {this.keyGrabber}
         />
 
       </div>
